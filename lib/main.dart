@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mini_whatsapp/calls.dart';
 import 'package:mini_whatsapp/camera.dart';
 import 'package:mini_whatsapp/chats.dart';
+import 'package:mini_whatsapp/status.dart';
 
 void main() => runApp(MaterialApp(
   home: MainScreen(),
@@ -81,8 +83,8 @@ class _MainScreenState extends State<MainScreen> {
           children: [
             CameraScreen(),
             Chat(),
-            Center(child: Text("mai status wala")),
-            Center(child: Text("mai call karne wala")),
+            Status(),
+            Call(),
           ],
         ),
       ),
