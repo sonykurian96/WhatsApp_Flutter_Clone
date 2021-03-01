@@ -21,9 +21,13 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 4,
+      initialIndex: 1,
       child: Scaffold(
+
         appBar: AppBar(
+
           actions: [
+
             Padding(
                 padding: EdgeInsets.only(right: 20.0),
                 child: GestureDetector(
@@ -34,43 +38,35 @@ class _MainScreenState extends State<MainScreen> {
                     Icons.search,
                     size: 26.0,
                   ),
-                )),
-            Padding(
-                padding: EdgeInsets.only(right: 20.0),
-                child: GestureDetector(
-                  onTap: () {
-                    DropdownButton(
-                        value: _value,
-                        items: [
-                          DropdownMenuItem(
-                            child: Text("First Item"),
-                            value: 1,
-                          ),
-                          DropdownMenuItem(
-                            child: Text("Second Item"),
-                            value: 2,
-                          ),
-                          DropdownMenuItem(child: Text("Third Item"), value: 3),
-                          DropdownMenuItem(child: Text("Fourth Item"), value: 4)
-                        ],
-                        onChanged: (value) {
-                          setState(() {
-                            _value = value;
-                          });
-                        });
-                    print("ha kaam kar raha hau");
-                  },
-                  child: Icon(Icons.more_vert),
-                )),
-          ],
+                )
+                ),
+
+                PopupMenuButton<String>(
+                  itemBuilder: (BuildContext context){
+                    return [
+                      PopupMenuItem(child: Text("New Group"+"\t"*2)),
+                      PopupMenuItem(child: Text("New broadcast"+"\t"*2)),
+                      PopupMenuItem(child: Text("WhatsApp Web"+"\t"*2)),
+                      PopupMenuItem(child: Text("Starred messages"+"\t"*2)),
+                      PopupMenuItem(child: Text("Payments"+"\t"*2)),
+                      PopupMenuItem(child: Text("Settings"+"\t"*2)),
+                    ];
+                  }
+                  ),
+
+
+                ],
+           
           bottom: TabBar(
             isScrollable: true,
             indicatorColor: Colors.white,
             tabs: [
               Container(
-                  width: 13,
+                  width: 10,
                   child: Tab(
-                      icon: Icon(Icons.camera_alt_rounded))),
+                      icon: Icon(Icons.camera_alt_rounded)
+                  )
+              ),
               Container(width: 90, child: Tab(text: "CHATS")),
               Container(width: 90, child: Tab(text: "STATUS")),
               Container(width: 90, child: Tab(text: "CALLS"))
