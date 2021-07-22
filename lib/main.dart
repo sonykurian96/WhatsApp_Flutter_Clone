@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mini_whatsapp/calls.dart';
-import 'package:mini_whatsapp/camera.dart';
-import 'package:mini_whatsapp/chats.dart';
-import 'package:mini_whatsapp/status.dart';
+import 'package:mini_whatsapp/pages/calls.dart';
+import 'package:mini_whatsapp/pages/camera.dart';
+import 'package:mini_whatsapp/pages/status.dart';
+import 'package:mini_whatsapp/pages/chats.dart';
 
 void main() => runApp(MaterialApp(
   home: MainScreen(),
@@ -61,15 +61,10 @@ class _MainScreenState extends State<MainScreen> {
             isScrollable: true,
             indicatorColor: Colors.white,
             tabs: [
-              Container(
-                  width: 10,
-                  child: Tab(
-                      icon: Icon(Icons.camera_alt_rounded)
-                  )
-              ),
-              Container(width: 90, child: Tab(text: "CHATS")),
-              Container(width: 90, child: Tab(text: "STATUS")),
-              Container(width: 90, child: Tab(text: "CALLS"))
+              Tab(icon: Icon(Icons.camera_alt_rounded)),
+              Tab(text: "CHATS"),
+              Tab(text: "STATUS"),
+              Tab(text: "CALLS")
             ],
           ),
           title: Text("WhatsApp"),

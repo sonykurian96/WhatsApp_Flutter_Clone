@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mini_whatsapp/chatModel.dart';
-import 'package:mini_whatsapp/contact_select.dart';
-import 'dart:math' as math;
+import 'package:mini_whatsapp/utils/chatModel.dart';
+import 'package:mini_whatsapp/utils/contact_select.dart';
 
 class Chat extends StatelessWidget {
   @override
@@ -10,7 +9,7 @@ class Chat extends StatelessWidget {
       body: InkWell(
         onTap: () {
           Navigator.push(context,
-           MaterialPageRoute(builder: (context) => Pasha_ka_chat()));
+           MaterialPageRoute(builder: (context) => Pashakachat()));
         },
         child: ListTile(
           leading: CircleAvatar(
@@ -45,7 +44,7 @@ class Chat extends StatelessWidget {
               SizedBox(
                 width: 2,
               ),
-              Text("Ek sadaran banda"),
+              Text("my first message"),
             ],
           ),
         ),
